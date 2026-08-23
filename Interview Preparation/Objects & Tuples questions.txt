@@ -1,0 +1,17 @@
+Q1. You are given a list of tuples, each representing a student (name, marks). Sort them by marks in descending order. If marks are equal, sort by name alphabetically.
+
+Input: [("Alice", 85), ("Bob", 92), ("Charlie", 85), ("David", 92)]
+
+Output: [("Bob", 92), ("David", 92), ("Alice", 85), ("Charlie", 85)]
+
+Q2. You are given a list of tuples (product, price, quantity). Find the total inventory value and the most expensive product.
+
+Input: [("pen", 5, 100), ("book", 50, 30), ("bag", 200, 10)]
+
+Q3. You are given a list of student objects, each having name, age, and grades (list of numbers). Find the student with the highest average grade. If tie, return the younger one.
+
+Q4. You are given a dictionary of employees where each key is an employee ID and value is an object with name, department, and salary. Group employees by department and find the highest paid in each department.
+
+Q5. You are given a list of order objects, each having order_id, customer, items (list of tuples (product, qty, price)), and status. Calculate total revenue from only "delivered" orders, and find the customer who spent the most.
+
+Q6. You are given a nested dictionary representing a company org chart — each employee has a name, role, and reports (list of employee objects under them). Write a function to print the full hierarchy with indentation, and count total employees under any given manager (at all levels).

@@ -1,0 +1,192 @@
+////////// HTML ///////////
+
+Difference between DIV & SPAN
+
+Are the HTML tags and elements the same thing?
+No.
+
+What are attributes in HTML?
+
+
+What are void/empty elements in HTML?
+
+What are HTML entities?
+<	&lt;
+>	&gt;
+&	&amp;
+(non-breaking space) &nbsp;
+
+
+Different types of lists in HTML.
+
+What is class in HTML
+
+Difference between class and ID
+
+What are semantic elements
+
+What are meta tags?
+
+Can we display a web page inside a web page?
+
+Is it possible to change an inline element to block element and vice versa?
+
+What is the target attribute in HTML?
+
+In how many ways can we specify the CSS styles for the HTML element?
+
+What are some of the advantages of HTML5 over its previous versions?
+
+How can we include audio or video in a webpage?
+
+What type of audio files can be played using HTML5?
+Mp3
+WAV
+Ogg
+
+Tell me about background property in CSS.
+
+Difference between localStorage & sessionStorage.
+
+What are the various input types in HTML form?
+
+
+
+////////// CSS //////////
+
+
+
+Explain how inheritance works in CSS?
+
+What is CSS specificity?
+
+What does RGB stand for in CSS?
+
+What is the A in RGBA?
+
+What are HEX values in CSS?
+
+What are EM & REM units in CSS?
+
+What are viewport units in CSS?
+
+How is the calc function used in CSS?
+
+What does the min-height property do in CSS?
+
+What does the max-height property do in CSS?
+
+What is a font stack, and what are generic fonts in CSS?
+
+What are font-weight and font-style in CSS?
+
+How is the text-indent property used in CSS?
+
+What are other text properties available in CSS?
+
+Explain the CSS Box Model.
+
+How to float an image around some text.
+
+What is the default value of box-sizing property?
+
+Different values of position property in CSS
+
+Different values of display property in CSS
+
+Difference between display: none & visibility: hidden
+
+What is universal selector in CSS?
+
+Difference between (space) and (>) selectors in CSS?
+
+Difference between (+) and (~) selectors in CSS?
+
+Difference between inline, block and inline-block in CSS?
+
+What are pseudo classes?
+
+Does margin-top or margin-bottom have an effect on inline elements?
+
+What is z-index?
+
+Difference between justify-content & align-items in CSS?
+
+Explain flex-wrap property in CSS
+
+What does !important mean in CSS?
+
+
+
+
+//////////	JAVASCRIPT //////////
+
+
+
+Is Javascript a statically typed or a dynamically typed language?
+
+What is the difference between client-side and server-side Javascript?
+
+What is recursion in a programming language? Explain with example.
+
+What are the different data types present in Javascript?
+
+Explain Hoisting in Javascript.
+
+Difference between var, let & const keywords in Javascript.
+
+Difference between “ == “ and “ === “ operators.
+
+What do you understand by DOM?
+
+What do you understand by virtual DOM?
+
+Explain scope in programming languages.
+
+Explain “this” keyword with example.
+
+Explain Higher Order Functions in Javascript.
+
+What are callbacks? Explain with example.
+
+What is currying in Javascript?
+
+Explain Closures in Javascript.
+
+What are anonymous functions? 
+
+What are arrow functions?
+
+Is there any difference in arrow & anonymous functions in Javascript?
+
+What are rest and spread operators?
+
+Explain Asynchronous programming with example.
+
+What are promises in Javascript? Explain with example.
+
+What are the various states of promises?
+
+What are the advantages of using promises over callbacks?
+
+What is Object Destructuring?
+
+Difference between setInteval & setTimeout?
+
+Explain event loop & execution context in Javascript?
+
+Explain OOP?
+
+What are constructors?
+
+What is super constructor in Javascript?
+
+How are arrays different from Set in Javascript? (uniqueness, methods, ordering)
+
+Does Set has methods push & pop?
+
+Difference between flat & flatMap in JS.
+
+What is the difference between Object.seal & Object.freeze?
+
+Explain modularization in Javascript (import & export).
