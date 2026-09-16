@@ -34,11 +34,12 @@ export const orders = [
   ] }
 ];
 
-export function getOrdersForCustomer(orders, customerId) { throw new Error('Not implemented'); }
-export function findOrderById(orders, orderId) { throw new Error('Not implemented'); }
-export function calculateOrderTotal(order) { throw new Error('Not implemented'); }
+export function getOrdersForCustomer(orders, customerId) { return orders.filter(order.customerId === customerId && order.status ==! "cancelled") }
+export function findOrderById(orders, orderId) { return orders.find(order.orderId === orderId) }
+export function calculateOrderTotal(order) { return orders.reduce((sum, item) => sum + item.unitPrice* item.quantity, 0 )}
 export function buildRestockList(products) { throw new Error('Not implemented'); }
-export function applyDiscountToCategory(products, category, percent) { throw new Error('Not implemented'); }
+export function applyDiscountToCategory(products, category, percent) {return products.map(product => (
+  {...product,price: product.category === category ? Number(((product.price * percent) / 100)): product.price})); }
 export function getTopSellingProducts(orders, limit) { throw new Error('Not implemented'); }
 export function summarizeSalesByRegion(orders) { throw new Error('Not implemented'); }
 export function rankCustomersBySpend(orders, customers) { throw new Error('Not implemented'); }
