@@ -1,0 +1,18 @@
+name: OpenClaw PR Review
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send PR to OpenClaw
+        run: |
+          curl -sS -X POST \
+            "https://rohitjain32gb.tail069dac.ts.net/hooks/github-pr" \
+            -H "Authorization: Bearer ${{ secrets.OPENCLAW_HOOK_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data-binary "@${{ github.event_path }}"
