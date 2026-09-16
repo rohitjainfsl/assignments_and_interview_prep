@@ -1,0 +1,74 @@
+1. What is React?
+
+2. How do you create a React component?
+
+3. Explain the concept of virtual DOM in react.
+
+4. What is state in react? How do you update a state?
+
+5. What are props in react?
+
+6. What are react lifecycle methods?
+
+7. What is JSX?
+
+8. How do you handle events in react?
+
+9. What is the purpose of keys in React lists?
+
+10. What is the purpose of the React.Fragment component?
+
+11. What are React hooks?
+
+ What is Redux, and why is it used in React applications?
+🌲 Explain the core principles of Redux (Actions, Reducers, Store).
+🌲 What is a Redux Store? How is it different from React component state?
+🌲 Describe the flow of data in a Redux application.
+🌲 Why is immutability important in Redux, and how is it achieved?
+🌲 What are Redux Actions and Action Creators?
+🌲 Explain the role of Reducers in Redux.
+🌲 What is a Redux Selector? Why and when would you use it?
+🌲 Discuss the difference between Redux Thunk and Redux Saga for handling async actions.
+🌲 What is a Redux Middleware? Provide examples of commonly used middlewares.
+🌲 Explain the purpose of a middleware like redux-thunk in Redux.
+🌲 How does a middleware handle actions in the Redux flow?
+🌲 What are the main features of Redux Toolkit?
+🌲 Explain the concept of 'slices' in Redux Toolkit.
+🌲 Why might someone prefer using RTK over traditional Redux?
+🌲 Discuss the benefits of using createSlice() in Redux Toolkit.
+🌲 How does RTK simplify the Redux setup compared to traditional Redux?
+🌲 Discuss the concept of Redux state normalization and its advantages.
+🌲 Explain the idea of time-travel debugging with Redux DevTools.
+🌲 How does memoization play a role in Redux selectors for performance optimization?
+🌲 Discuss the potential drawbacks of overusing Redux in small to medium-sized applications.
+🌲 Explain the differences between action creators and action types in Redux.
+
+
+
+
+
+
+
+
+1. Implement a Todo List: Create a simple todo list application where users can add, edit, and delete tasks.
+
+2. Build a Weather App: Develop a weather application that fetches weather data from an API and displays it to the user.
+
+3. Create a Pagination Component: Design a pagination component that handles navigation between pages of data.
+
+4. Implement a Login Form: Build a login form with validation for email and password fields.
+
+5. Build a Countdown Timer: Develop a countdown timer component that starts from a specified time and decrements until it reaches zero.
+
+6. Create a Modal Component: Design a modal component that can be toggled open and closed.
+7. Implement Drag and Drop: Develop a feature that allows users to drag and drop items within a list.
+
+8. Build a Chat Application: Develop a real-time chat application using WebSockets or a library like Socket.io.
+
+9. Create a Dropdown Component: Design a dropdown component with options that can be selected by the user.
+
+10. Implement Form Validation: Develop a form with validation for various fields such as email, password, and phone number.
+
+11. Build a Carousel Component: Design a carousel component that displays a slideshow of images or content.
+
+12. Create a Responsive Layout: Develop a responsive layout that adjusts based on the screen size and orientation.

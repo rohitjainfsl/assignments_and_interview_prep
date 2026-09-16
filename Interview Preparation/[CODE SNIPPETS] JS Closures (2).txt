@@ -1,0 +1,80 @@
+function counter() {
+    let count = 0; // Private variable
+
+    return function () {
+        count++;
+        console.log(count);
+    };
+}
+
+const increment = counter();
+increment();
+increment();
+
+////////////////////
+
+function outerFunction() {
+    let outerVariable = "I am from outer function";
+
+    function innerFunction() {
+        console.log(outerVariable);
+    }
+    return innerFunction;
+}
+
+const myClosure = outerFunction();
+myClosure();
+
+////////////////////
+
+function counter() {
+    let count = 0;
+    return {
+        increment: function () {
+            count++;
+            console.log(count);
+        },
+        decrement: function () {
+            count--;
+            console.log(count);
+        }
+    };
+}
+
+const myCounter = counter();
+myCounter.increment();
+myCounter.increment();
+myCounter.decrement();
+console.log(myCounter.count);
+
+////////////////////
+
+function createMultiplier(multiplier) {
+    return function (value) {
+        return value * multiplier;
+    };
+}
+
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+
+console.log(double(5));
+console.log(triple(5));
+
+////////////////////
+
+function once(fn) {
+    let executed = false;
+
+    return function (...args) {
+        if (!executed) {
+            executed = true;
+            return fn(...args);
+        }
+        console.log("Function already executed.");
+    };
+}
+
+const start = once(() => console.log("Started!"));
+start();
+start();

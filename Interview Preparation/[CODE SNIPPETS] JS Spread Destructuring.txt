@@ -1,0 +1,52 @@
+const nums = [1, 2, 3];
+const moreNums = [0, ...nums, 4, 5];
+console.log(moreNums);
+
+///////////////////////////////
+
+const str = "hello";
+console.log([...str]);
+
+///////////////////////////////
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const merged = { ...obj1, ...obj2 };
+console.log(merged);
+
+///////////////////////////////
+
+const arr = [10, 20, 30, 40];
+const [first, , third] = arr;
+console.log(first, third);
+
+///////////////////////////////
+
+const { x, y = 5 } = { x: 1 };
+console.log(x, y);
+
+///////////////////////////////
+
+function printUser({ name, age }) {
+  console.log(`${name} is ${age} years old.`);
+}
+printUser({ name: "Alice", age: 25 });
+
+///////////////////////////////
+
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, arr1];
+console.log(arr2);
+
+///////////////////////////////
+
+const letters = [..."abc"];
+letters.push(...["d", "e"]);
+console.log(letters);
+
+///////////////////////////////
+
+const objA = { x: 1, y: 2 };
+const objB = { y: 10, z: 20 };
+const merged = { ...objA, ...objB, x: 100 };
+console.log(merged);

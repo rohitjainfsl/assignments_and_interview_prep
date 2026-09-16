@@ -1,0 +1,81 @@
+function mapArray(array, callback) {
+  const mappedArray = [];
+  for (let element of array) {
+    mappedArray.push(callback(element));
+  }
+  return mappedArray;
+}
+
+function double(num) {
+  return num * 2;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(mapArray(numbers, double));
+
+////////////////////
+
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+
+const incrementCounter = counter();
+console.log(incrementCounter());
+console.log(incrementCounter());
+console.log(incrementCounter());
+
+////////////////////
+
+function filterArray(array, callback) {
+  const filteredArray = [];
+  for (let element of array) {
+    if (callback(element)) {
+      filteredArray.push(element);
+    }
+  }
+  return filteredArray;
+}
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(filterArray(numbers, isEven));
+
+////////////////////
+
+function reduceArray(array, callback, initialValue) {
+  let accumulator = initialValue;
+  for (let element of array) {
+    accumulator = callback(accumulator, element);
+  }
+  return accumulator;
+}
+
+function sum(acc, curr) {
+  return acc + curr;
+}
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(reduceArray(numbers, sum, 0));
+
+////////////////////w
+
+function customForEach(array, callback) {
+  for (let i = 0; i < array.length; i++) {
+    callback(array[i], i, array);
+  }
+}
+
+const numbers = [10, 20, 30];
+
+customForEach(numbers, function (value, index, arr) {
+  arr[index] = value + index;
+});
+
+console.log(numbers);

@@ -1,0 +1,80 @@
+Q1. You have a string "hello world". Reverse it and print the result.
+
+Q2. You are given a list of numbers: [4, 7, 2, 9, 1, 5]. Print only the even numbers from the list.
+
+Q3. You are given a sentence as a string. Count how many words are in it. (Do not use len() directly on the string.)
+
+Q4. You are given a list of strings: ["apple", "banana", "cherry", "avocado", "blueberry"]. Return a new list containing only the strings that start with the letter "a" or "b".
+
+Q5. You are given two strings. Without using any built-in sort function, check if the two strings are anagrams of each other.
+Input: "listen" and "silent"
+Output → Yes
+
+Q6. You are given a paragraph as a string. Find the word that appears the most number of times. If there's a tie, return the word that comes first alphabetically.
+
+Q7. You have a string with duplicate characters. Remove all duplicates while preserving the original order. 
+Input: "programming" 
+Output → "progamin"
+
+Q8. You are given a list of sentences. Sort them by the number of words in each sentence, ascending.
+Input: ["Hi there", "Go", "I love Python", "OK fine"]
+Output: ["Go", "OK fine", "Hi there", "I love Python"]
+
+Q9. You are given a list of integers. Find all pairs that add up to a given target sum. No pair should be repeated.
+Input: [2, 4, 3, 7, 1, 5], target = 6
+Output: [(2, 4), (1, 5)]
+
+Q10. You are given a string containing brackets (), [], {}. Check if they are balanced.
+Input: "{[()]}" → Output: True
+Input: "{[(])" → Output: False
+Input: "(((" → Output: False
+
+Q11. You are given a list of words. Group them into anagram families.
+Input:  ["eat", "tea", "tan", "ate", "nat", "bat"]
+Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+Input:  ["abc", "car", "arc", "dog", "god", "bca"]
+Output: [["abc", "bca"], ["car", "arc"], ["dog", "god"]]
+Input:  ["a", "b", "a"]
+Output: [["a", "a"], ["b"]]
+
+Q12. You are given a string. Find the longest substring without repeating characters.
+Input : "abcabcbb"
+Output: "abc" (length 3)
+Input : "pwwkew"
+Output: "wke" (length 3)
+Input : "aaaa"
+Output: "a" (length 1)
+Input : ""
+Output: "" (length 0)
+
+Q13. You are given a list of integers. Find the longest consecutive sequence.
+Input : [100, 4, 200, 1, 3, 2]
+Output: 4 (sequence: 1,2,3,4)
+Input : [0, -1, 1, 2]
+Output: 4 (sequence: -1,0,1,2)
+Input : [5]
+Output: 1
+Input : [0, -1, 1, 2]
+Output: 4 (sequence: -1,0,1,2)
+Input : [1, 1, 1, 1]
+Output: 1 (duplicates don't extend sequence)
+
+Q14. You are given a paragraph. Find the longest palindromic substring in it (ignore spaces and punctuation).
+Input : "never odd or even"
+Output: "neveroddoreven"
+Input : "racecar is a word"
+Output: "racecar"
+Input : "abcd"
+Output: any single character (no palindrome longer than 1)
+Input : "a"
+Output: "a"
+
+Q15. You are given two arrays. Without using any built-in set functions, find their intersection — elements that appear in both, without duplicates.
+Input : [1, 3, 5, 7, 3, 9] and [3, 5, 5, 8, 9]
+Output: [3, 5, 9]
+Input : [1, 2, 2, 3] and [2, 2, 3, 4]
+Output: [2, 3]
+Input : [1, 2, 3] and [4, 5, 6]
+Output: []
+Input : [] and [1, 2, 3]
+Output: [] 

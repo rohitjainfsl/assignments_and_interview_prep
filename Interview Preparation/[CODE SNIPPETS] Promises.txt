@@ -1,0 +1,308 @@
+console.log("A");
+Promise.resolve().then(() => {
+  console.log("B");
+});
+setTimeout(() => {
+  console.log("C");
+}, 0);
+console.log("D");
+
+//////////////////////////////////////////////////
+
+setTimeout(() => console.log("T1"), 0);
+Promise.resolve().then(() => {
+  console.log("P1");
+  setTimeout(() => console.log("T2"), 0);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.all([Promise.resolve("A"), Promise.resolve("B")]).then((result) => {
+  console.log(result);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.allSettled([Promise.resolve("A"), Promise.reject("B")]).then((result) => {
+  console.log(result[0].status);
+  console.log(result[1].status);
+});
+console.log("DONE");
+
+//////////////////////////////////////////////////
+
+Promise.race([Promise.resolve("A"), Promise.resolve("B")]).then((value) => {
+  console.log(value);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.resolve("A")
+  .then((value) => {
+    console.log(value);
+  })
+  .finally(() => {
+    console.log("FINALLY");
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.any([Promise.resolve("A"), Promise.resolve("B")]).then((value) => {
+  console.log(value);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.resolve()
+  .then(() => {
+    console.log("A");
+    return "B";
+  })
+  .then((value) => {
+    console.log(value);
+  });
+console.log("C");
+
+//////////////////////////////////////////////////
+
+Promise.resolve().then(() => {
+  console.log("A");
+  Promise.resolve().then(() => {
+    console.log("B");
+  });
+  console.log("C");
+});
+console.log("D");
+
+//////////////////////////////////////////////////
+
+const p1 = new Promise((resolve) => {
+  setTimeout(() => resolve("A"), 100);
+});
+const p2 = new Promise((resolve) => {
+  setTimeout(() => resolve("B"), 0);
+});
+Promise.all([p1, p2]).then((values) => {
+  console.log(values);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = Promise.resolve("A");
+const p2 = Promise.reject("B");
+const p3 = Promise.resolve("C");
+Promise.all([p1, p2, p3])
+  .then((values) => {
+    console.log(values);
+  })
+  .catch((error) => {
+    console.log("ERROR:", error);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = new Promise((resolve) => {
+  setTimeout(() => resolve("A"), 100);
+});
+const p2 = new Promise((resolve) => {
+  setTimeout(() => resolve("B"), 0);
+});
+Promise.allSettled([p1, p2]).then((result) => {
+  console.log(result[0].value);
+  console.log(result[1].value);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = new Promise((resolve) => {
+  setTimeout(() => resolve("A"), 100);
+});
+const p2 = new Promise((_, reject) => {
+  setTimeout(() => reject("B"), 0);
+});
+Promise.race([p1, p2])
+  .then((value) => {
+    console.log("SUCCESS:", value);
+  })
+  .catch((error) => {
+    console.log("ERROR:", error);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.resolve("A")
+  .finally(() => {
+    console.log("FINALLY");
+    return "B";
+  })
+  .then((value) => {
+    console.log(value);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.any([Promise.reject("A"), Promise.resolve("B"), Promise.resolve("C")])
+  .then((value) => {
+    console.log("SUCCESS:", value);
+  })
+  .catch((error) => {
+    console.log("ERROR:", error.errors);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.resolve()
+  .then(() => {
+    console.log("A");
+    return Promise.resolve();
+  })
+  .then(() => {
+    console.log("B");
+  });
+Promise.resolve()
+  .then(() => {
+    console.log("C");
+  })
+  .then(() => {
+    console.log("D");
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = Promise.resolve("A").then((value) => {
+  console.log("P1");
+  return value;
+});
+const p2 = Promise.resolve("B").then((value) => {
+  console.log("P2");
+  return value;
+});
+Promise.all([p1, p2]).then((values) => {
+  console.log(values.join(""));
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = new Promise((resolve) => {
+  setTimeout(() => resolve("TIMER"), 0);
+});
+const p2 = Promise.resolve("PROMISE");
+Promise.race([p1, p2]).then((value) => {
+  console.log(value);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.reject("A")
+  .catch((error) => {
+    console.log("Caught:", error);
+    return "B";
+  })
+  .then((value) => {
+    console.log("Then:", value);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.reject("A")
+  .catch((error) => {
+    console.log("Caught:", error);
+    throw "B";
+  })
+  .then(() => {
+    console.log("THEN");
+  })
+  .catch((error) => {
+    console.log("Final:", error);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.reject("A")
+  .finally(() => {
+    console.log("FINALLY");
+  })
+  .catch((error) => {
+    console.log("ERROR:", error);
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = Promise.resolve().then(() => {
+  console.log("A");
+  return "B";
+});
+const p2 = Promise.reject("C").catch((error) => {
+  console.log(error);
+  return "D";
+});
+Promise.allSettled([p1, p2]).then((result) => {
+  console.log(result[0].value);
+  console.log(result[1].value);
+});
+console.log("END");
+
+//////////////////////////////////////////////////
+
+console.log("START");
+setTimeout(() => {
+  console.log("T1");
+  Promise.resolve().then(() => {
+    console.log("P inside T1");
+  });
+}, 0);
+Promise.resolve()
+  .then(() => {
+    console.log("P1");
+    setTimeout(() => {
+      console.log("T2");
+    }, 0);
+  })
+  .then(() => {
+    console.log("P2");
+  });
+console.log("END");
+
+//////////////////////////////////////////////////
+
+Promise.any([Promise.reject("A"), Promise.reject("B")])
+  .then((value) => {
+    console.log("SUCCESS:", value);
+  })
+  .catch((error) => {
+    console.log(error.constructor.name);
+    console.log(error.errors);
+  });
+ console.log("END");
+
+//////////////////////////////////////////////////
+
+const p1 = new Promise((resolve) => {
+  setTimeout(() => resolve("TIMER"), 0);
+});
+const p2 = Promise.reject("FAILED");
+const p3 = Promise.resolve("FAST");
+Promise.any([p1, p2, p3]).then((value) => {
+  console.log(value);
+});
+Promise.resolve().then(() => {
+  console.log("MICROTASK");
+});
+console.log("END");
