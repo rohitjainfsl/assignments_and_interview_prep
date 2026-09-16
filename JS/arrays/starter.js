@@ -34,16 +34,49 @@ export const orders = [
   ] }
 ];
 
-export function getOrdersForCustomer(orders, customerId) { throw new Error('Not implemented'); }
-export function findOrderById(orders, orderId) { throw new Error('Not implemented'); }
-export function calculateOrderTotal(order) { throw new Error('Not implemented'); }
-export function buildRestockList(products) { throw new Error('Not implemented'); }
+export function getOrdersForCustomer(orders, customerId) {
+  return orders.filter(element => {
+    return element.customerId === customerId &&
+           element.status !== "cancelled";
+  });
+}
+export function findOrderById(orders, orderId) {
+  return orders.find(order => order.id === orderId);
+}
+export function calculateOrderTotal(order) {
+  const prices = order.items.map(item => {
+    return item.unitPrice * item.quantity;
+  });
+
+  const total = prices.reduce((sum, price) => {
+    return sum + price;
+  }, 0);
+ 
+  return Number(total.toFixed(2));
+}
+export function buildRestockList(products) { 
+  products.filter(products => products.stock <= products.reorderLevel).map(product => {
+      return {
+        id: product.id,
+        name: product.name,
+        shortage: product.reorderLevel - product.stock
+      };
+    })
+ }
 export function applyDiscountToCategory(products, category, percent) { throw new Error('Not implemented'); }
 export function getTopSellingProducts(orders, limit) { throw new Error('Not implemented'); }
-export function summarizeSalesByRegion(orders) { throw new Error('Not implemented'); }
+export function summarizeSalesByRegion(orders) { 
+  orders
+    .filter(order => order.status !== "cancelled")
+    .forEach(order => {
+      const orderTotal = order.items.reduce((sum, item) => {
+        return sum + item.unitPrice * item.quantity;
+      }, 0);
+     });
+    }
 export function rankCustomersBySpend(orders, customers) { throw new Error('Not implemented'); }
 
 // Reflection:
-// 1.
-// 2.
-// 3.
+// 1. combining many values into one final value
+// 2. to make a copy of a array is important as it would not change the acctual array.
+// 3. 5 question
